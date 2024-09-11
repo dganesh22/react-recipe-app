@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container .title {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.container .title h3 {
+  font-size: 3rem;
+  font-weight: 700 !important;
+  color: #658698;
+}
+
+.title .form-input {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.title .form-item {
+  padding: 8px 10px;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container .recipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+.recipe-container .card .image {
+  position: relative;
+}
+
+.recipe-container .card img {
+  max-width: 100%;
+}
+
+.recipe-container .card {
+  box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.9s;
+}
+
+.recipe-container .card:hover {
+  cursor: pointer;
+  transform: scale(0.9, 0.9);
+}
+
+.recipe-container .card .image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.card .content {
+  padding: 15px;
+}
+
+.card .content .name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.card .content .name::before {
+  content: "->  ";
+}
+
+.card .content .desc p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content .desc p > strong > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4px;
+}
+
+.mealType {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #222;
+  padding: 15px;
+  color: #fff;
+  border-radius: 10px;
 }
